@@ -1,0 +1,2 @@
+a:5:{s:4:"user";s:6:"张斌";s:3:"sql";s:106:"ALTER TABLE `shop`
+ADD COLUMN `stock_show2`  int(4) NOT NULL COMMENT '折扣后价格' AFTER `stock_show`;";s:4:"desc";s:34:"shop表新加折扣后价格字段";s:7:"warning";a:0:{}s:6:"delete";b:1;}

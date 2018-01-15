@@ -1,0 +1,8 @@
+a:4:{s:4:"user";s:2:"wq";s:3:"sql";s:407:"CREATE TABLE `prize` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prize_name` varchar(255) DEFAULT NULL COMMENT '奖品名称',
+  `price` int(11) DEFAULT '100' COMMENT '单价',
+  `url` varchar(100) DEFAULT '/images/homepage_commodity.png' COMMENT '图片地址',
+  `is_show` tinyint(4) DEFAULT '1' COMMENT '是否展现',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='奖品兑换表';";s:4:"desc";s:5:"prize";s:7:"warning";a:0:{}}

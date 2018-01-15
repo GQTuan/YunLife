@@ -1,0 +1,3 @@
+a:5:{s:4:"user";s:6:"张斌";s:3:"sql";s:265:"ALTER TABLE `address`
+MODIFY COLUMN `phone`  char(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '手机号' AFTER `user_id`,
+ADD COLUMN `phone`  char(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '手机号' AFTER `user_id`;";s:4:"desc";s:31:"address表里增加联系电话";s:7:"warning";a:0:{}s:6:"delete";b:1;}

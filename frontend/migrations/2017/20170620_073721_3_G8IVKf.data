@@ -1,0 +1,4 @@
+a:5:{s:4:"user";s:6:"张斌";s:3:"sql";s:340:"ALTER TABLE `shop_order`
+ADD COLUMN `amount`  decimal(11,2) NOT NULL COMMENT '支付金额' AFTER `addr_id`,
+ADD COLUMN `charge_type`  tinyint(1) NOT NULL COMMENT '充值方式：1支付宝2微信' AFTER `amount`,
+ADD COLUMN `charge_state`  tinyint(1) NOT NULL COMMENT '充值状态：1代付款，2成功，-1 失败;' AFTER `charge_type`;";s:4:"desc";s:30:"商品订单新加三个字段";s:7:"warning";a:0:{}s:6:"delete";b:1;}

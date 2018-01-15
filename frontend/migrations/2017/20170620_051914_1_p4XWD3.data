@@ -1,0 +1,56 @@
+a:5:{s:4:"user";s:6:"张斌";s:3:"sql";s:2938:"CREATE TABLE `shop` (
+  `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `shop_name` varchar(30) DEFAULT NULL COMMENT '商品名称',
+  `stock_cost` float DEFAULT NULL COMMENT '进货价格',
+  `sell_cost` float DEFAULT NULL COMMENT '卖出价格',
+  `stock_ture` int(4) DEFAULT NULL COMMENT '真实库存',
+  `stock_show` int(4) DEFAULT NULL COMMENT '显示库存',
+  `contents` text COMMENT '内容',
+  `images` varchar(60) DEFAULT NULL COMMENT '图片',
+  `hot` tinyint(1) DEFAULT NULL COMMENT '是否热门;1:热门;2:冷门',
+  `created_at` datetime NOT NULL COMMENT '创建时间',
+  `created_by` int(6) NOT NULL COMMENT '创建人id',
+  `updated_at` datetime NOT NULL COMMENT '更新时间',
+  `updated_by` int(6) NOT NULL COMMENT '更新人id',
+  `is_show` tinyint(1) DEFAULT NULL COMMENT '是否上架;1:上架;2:下架',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品表';
+
+CREATE TABLE `address` (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `user_id` int(6) DEFAULT NULL COMMENT '用户id',
+  `addr` varchar(60) DEFAULT NULL COMMENT '地址',
+  `default` tinyint(1) DEFAULT NULL COMMENT '是否默认;1:默认;2;备用',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户地址';
+
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL COMMENT '用户名',
+  `password` varchar(80) NOT NULL COMMENT '密码',
+  `mobile` char(11) DEFAULT '' COMMENT '手机号',
+  `nickname` varchar(100) DEFAULT '' COMMENT '昵称',
+  `admin_id` int(11) DEFAULT '0' COMMENT '代理商ID',
+  `pid` int(11) DEFAULT '0' COMMENT '邀请人ID',
+  `invide_code` varchar(20) DEFAULT '' COMMENT '邀请码',
+  `account` decimal(13,2) DEFAULT '0.00' COMMENT '账户余额',
+  `integral` decimal(13,2) DEFAULT NULL COMMENT '积分',
+  `blocked_account` decimal(13,2) DEFAULT '0.00' COMMENT '冻结金额',
+  `profit_account` decimal(13,2) DEFAULT '0.00' COMMENT '总盈利',
+  `loss_account` decimal(13,2) DEFAULT '0.00' COMMENT '总亏损',
+  `total_fee` decimal(13,2) DEFAULT '0.00' COMMENT '返点总额',
+  `fee_detail` varchar(250) DEFAULT '' COMMENT '各级返点详情',
+  `login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
+  `is_manager` tinyint(4) DEFAULT '-1' COMMENT '是否是经纪人',
+  `face` varchar(150) DEFAULT '' COMMENT '头像',
+  `open_id` varchar(100) DEFAULT NULL COMMENT '微信的open_id',
+  `state` tinyint(4) DEFAULT '1',
+  `apply_state` tinyint(4) DEFAULT '1' COMMENT '申请状态：1未申请，2待审核，3审核通过，-1审核不通过',
+  `created_at` datetime DEFAULT NULL COMMENT '注册时间',
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `opneid` (`open_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=100027 DEFAULT CHARSET=utf8 COMMENT='用户表';";s:4:"desc";s:63:"添加shop表；添加address表；更新user表里面的字段";s:7:"warning";a:0:{}s:6:"delete";b:1;}

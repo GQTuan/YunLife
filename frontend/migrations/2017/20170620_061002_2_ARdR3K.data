@@ -1,0 +1,28 @@
+a:4:{s:4:"user";s:2:"wq";s:3:"sql";s:1402:"CREATE TABLE `shop` (
+  `id` int(6) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `shop_name` varchar(30) DEFAULT NULL COMMENT '商品名称',
+  `stock_cost` float DEFAULT NULL COMMENT '进货价格',
+  `sell_cost` float DEFAULT NULL COMMENT '卖出价格',
+  `stock_ture` int(4) DEFAULT NULL COMMENT '真实库存',
+  `stock_show` int(4) DEFAULT NULL COMMENT '显示库存',
+  `contents` text COMMENT '内容',
+  `images` varchar(60) DEFAULT NULL COMMENT '图片',
+  `hot` tinyint(1) DEFAULT NULL COMMENT '是否热门;1:热门;2:冷门',
+  `created_at` datetime NOT NULL COMMENT '创建时间',
+  `created_by` int(6) NOT NULL COMMENT '创建人id',
+  `updated_at` datetime NOT NULL COMMENT '更新时间',
+  `updated_by` int(6) NOT NULL COMMENT '更新人id',
+  `is_show` tinyint(1) DEFAULT NULL COMMENT '是否上架;1:上架;2:下架',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品表';
+
+CREATE TABLE `address` (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `user_id` int(6) DEFAULT NULL COMMENT '用户id',
+  `addr` varchar(60) DEFAULT NULL COMMENT '地址',
+  `default` tinyint(1) DEFAULT NULL COMMENT '是否默认;1:默认;2;备用',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户地址';
+
+ALTER TABLE `user`
+ADD COLUMN `integral`  decimal(13,2) NULL DEFAULT 0 COMMENT '积分' AFTER `invide_code`;";s:4:"desc";s:4:"shop";s:7:"warning";a:0:{}}

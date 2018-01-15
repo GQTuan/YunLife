@@ -1,0 +1,2 @@
+a:4:{s:4:"user";s:2:"wq";s:3:"sql";s:94:"ALTER TABLE `prize`
+ADD COLUMN `type`  tinyint(4) NULL DEFAULT 1 COMMENT '类型' AFTER `hot`;";s:4:"desc";s:5:"prize";s:7:"warning";a:0:{}}

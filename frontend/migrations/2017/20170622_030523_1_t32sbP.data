@@ -1,0 +1,2 @@
+a:4:{s:4:"user";s:2:"wq";s:3:"sql";s:103:"ALTER TABLE `prize`
+ADD COLUMN `integral`  decimal(13,2) NULL DEFAULT 0 COMMENT '积分' AFTER `price`;";s:4:"desc";s:8:"integral";s:7:"warning";a:0:{}}

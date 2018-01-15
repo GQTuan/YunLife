@@ -1,0 +1,2 @@
+a:4:{s:4:"user";s:2:"wq";s:3:"sql";s:94:"ALTER TABLE `prize`
+ADD COLUMN `hot`  tinyint(4) NULL DEFAULT 10 COMMENT '排序' AFTER `url`;";s:4:"desc";s:5:"prize";s:7:"warning";a:0:{}}

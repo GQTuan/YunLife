@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/*reset*/
+body,p,h1,h2,h3,h4,h5,h6,ul,li,ol,input,textarea,span,a{
+    margin:0;
+    padding:0;
+    font-family:"PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    font-size:.24rem;
+    letter-spacing:0.02rem;
+    list-style:none;
+    box-sizing:border-box;
+    /*-webkit-user-select:none;
+    user-select:none;*/
+}
+body{
+    width: 100vw;
+    overflow-x:hidden;
+    min-height: 100vh;
+    background: #f2f2f2;
+    padding-bottom:1rem;
+}
+html{
+    -webkit-text-size-adjust:none;
+    color:#ACABAF;
+    background:#F0F0F0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+input,button{
+    outline:0;
+}
+.clear-fl:after{
+    content:"";
+    display: block;
+    clear: both;
+}
+.lf{
+    float: left;
+}
+.rt{
+    float: right;
+}
+/*底部导航*/
+footer{
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+footer>ul>li{
+    float: left;
+    width: 50%;
+    height: .98rem;
+    text-align: center;
+}
+footer>ul>li>a{
+    display: inline-block;
+    width: 100%;
+    height: .8rem;
+    color: #828284;
+    font-size: .22rem;
+    line-height: 1.5rem;
+    background: url(../images/button_homepage_default.png) no-repeat center .14rem;
+    background-size: .48rem .48rem; 
+}
+footer>ul>li.home.active>a{
+    background: url(../images/button_homepage_selected.png) no-repeat center .14rem;
+    background-size: .48rem .48rem; 
+    color: #FF5A66;
+}
+footer>ul>li.shopping-bag>a{
+    background: url(../images/cart_default.png) no-repeat center .14rem;
+    background-size: .48rem .48rem; 
+}
+footer>ul>li.shopping-bag.active>a{
+    background: url(../images/cart_Selected.png) no-repeat center .14rem;
+    background-size: .48rem .48rem; 
+    color: #FF5A66;
+}
+footer>ul>li.my>a{
+    background: url(../images/button_user_default.png) no-repeat center .14rem;
+    background-size: .48rem .48rem; 
+}
+footer>ul>li.my.active>a{
+    background: url(../images/button_user_elected.png) no-repeat center .14rem;
+    background-size: .48rem .48rem; 
+    color: #FF5A66;
+}
+.main{
+    position: relative;
+}
+.submit{
+    text-align: center;
+    line-height: .8rem;
+}
+.detail-nav {
+    z-index: 100000;
+}

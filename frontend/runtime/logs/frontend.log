@@ -1,0 +1,636 @@
+2018-01-15 11:13:36 [GET][http://yunlife.lc/site/get-data?id=22][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_mila d1
+                where time >= "2018-01-12 11:13:36"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_mila cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:13:40 [GET][http://yunlife.lc/site/get-data?id=21][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_yushi d1
+                where time >= "2018-01-12 11:13:40"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_yushi cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:13:42 [GET][http://yunlife.lc/site/get-data?id=21][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_yushi d1
+                where time >= "2018-01-12 11:13:42"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_yushi cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:13:42 [GET][http://yunlife.lc/site/get-data?id=22][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_mila d1
+                where time >= "2018-01-12 11:13:42"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_mila cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:14:13 [GET][http://yunlife.lc/site/get-data?id=22][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_mila d1
+                where time >= "2018-01-12 11:14:13"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_mila cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:14:43 [GET][http://yunlife.lc/site/get-data?id=22][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_mila d1
+                where time >= "2018-01-12 11:14:43"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_mila cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:15:12 [GET][http://yunlife.lc/site/get-data?id=22][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_mila d1
+                where time >= "2018-01-12 11:15:12"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_mila cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:15:25 [GET][http://yunlife.lc/site/get-data?id=22][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_mila d1
+                where time >= "2018-01-12 11:15:25"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_mila cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('22')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:15:28 [GET][http://yunlife.lc/site/get-data?id=21][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_yushi d1
+                where time >= "2018-01-12 11:15:28"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_yushi cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:15:30 [GET][http://yunlife.lc/site/get-data?id=21][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_yushi d1
+                where time >= "2018-01-12 11:15:30"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_yushi cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('21')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:15:33 [GET][http://yunlife.lc/site/get-data?id=20][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('20')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_longyanxiang d1
+                where time >= "2018-01-12 11:15:33"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_longyanxiang cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('20')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+
+2018-01-15 11:16:04 [GET][http://yunlife.lc/site/get-data?id=20][127.0.0.1][100001][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by' in E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php:900
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(900): PDOStatement->execute()
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('20')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1055 Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+The SQL being executed was: SELECT
+                sub.*, cu.price close, UNIX_TIMESTAMP(DATE_FORMAT(time, "%Y-%m-%d %H:%i")) * 1000 time
+        FROM
+            (
+                SELECT
+                    min(d1.price) low,
+                    max(d1.price) high,
+                    d1.price open,
+                    max(d1.id) id
+                FROM
+                    data_longyanxiang d1
+                where time >= "2018-01-12 11:16:04"
+                group by
+                    DATE_FORMAT(time, "%Y-%m-%d %H:%i")
+            ) sub,
+            data_longyanxiang cu
+        WHERE
+            cu.id = sub.id' in E:\www\YunLife\vendor\yiisoft\yii2\db\Schema.php:633
+Stack trace:
+#0 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(915): yii\db\Schema->convertException(Object(PDOException), 'SELECT\n        ...')
+#1 E:\www\YunLife\vendor\yiisoft\yii2\db\Command.php(362): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 E:\www\YunLife\frontend\controllers\SiteController.php(431): yii\db\Command->queryAll()
+#3 [internal function]: frontend\controllers\SiteController->actionGetData('20')
+#4 E:\www\YunLife\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\www\YunLife\vendor\yiisoft\yii2\base\Controller.php(160): yii\base\InlineAction->runWithParams(Array)
+#6 E:\www\YunLife\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('get-data', Array)
+#7 E:\www\YunLife\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('site/get-data', Array)
+#8 E:\www\YunLife\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\www\YunLife\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1055
+    [2] => Expression #3 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'yunlife.d1.price' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+)
+

@@ -12,7 +12,7 @@ class GatherSina extends Gather
     public $urlPrefix = 'http://hq.sinajs.cn/list=';
     // 交易产品列表，格式为["表名" => "抓取链接参数名"]
     public $productList = [
-        'conc' => 'hf_OIL', //布伦特油
+        // 'conc' => 'hf_OIL', //布伦特油
         // 'cu0' => 'CU0', //沪铜
         // 'hkhsi' => 'rt_hkHSI', // 恒生指数
         // 'if1609' => 'CFF_RE_IF1610', // IF
@@ -26,6 +26,7 @@ class GatherSina extends Gather
         // 'cl' => 'hf_CL', // 美原油
         // 'gc' => 'hf_GC', // 美黄金
         // 'xpt' => 'hf_XPT', // 伦敦铂金
+        'ng' => 'hf_NG',
         // 'xag' => 'hf_XAG', // 伦敦银
         // 'dji' => 'gb_$dji', //道琼斯工业平均指数(.DJI)
         // 'ixic' => 'gb_ixic', //纳斯达克综合指数(.IXIC)
@@ -182,6 +183,11 @@ class GatherSina extends Gather
     protected function G_CL($html, $name)
     {
         $this->G_GC($html, $name, '美原油');
+    }
+
+    protected function G_NG($html, $name)
+    {
+        $this->G_GC($html, $name, 'ng');
     }
 
     protected function G_GC($html, $name, $title = '美黄金')

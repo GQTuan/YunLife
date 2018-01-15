@@ -29,31 +29,31 @@ class GatherXinfu extends Gather
         //     'url' => 'http://www.xftz.cn/info/ni_js.php?callback=jQuery18309952453525257471_1480414405833&_=1472732114849',
         //     'typeprefix' => 'XHN'
         // ],
-        // 'conc' => [
-        //     'name' => '原油',
-        //     'url' => 'http://www.xftz.cn/info/yyzs_js.php?callback=jQuery183003229861600770123_1481679924274&_=1481683365018',
-        //     'typeprefix' => 'CONC'
-        // ],
+         'conc' => [
+             'name' => '原油',
+             'url' => 'http://www.xftz.cn/info/yyzs_js.php?callback=jQuery183003229861600770123_1481679924274&_=1481683365018',
+             'typeprefix' => 'CONC'
+         ],
         // 'cu0' => [
         //     'name' => '粤国际铜',
         //     'url' => 'http://www.xftz.cn/info/ygjyin_js.php?ygjType=CU&callback=jQuery1830618806125568697_1472908852515&_=1472908852674',
         //     'typeprefix' => 'CU'
         // ],
-        // 'xau' => [
-        //     'name' => '黄金',
-        //     'url' => 'http://www.xftz.cn/info/ldj_js.php?callback=jQuery1830015559766455635393_1481592345800&_=1481592366008',
-        //     'typeprefix' => 'XAU'
-        // ],
+         'xau' => [
+             'name' => '黄金',
+             'url' => 'http://www.xftz.cn/info/ldj_js.php?callback=jQuery1830015559766455635393_1481592345800&_=1481592366008',
+             'typeprefix' => 'XAU'
+         ],
         // 'gdpt' => [
         //    'name' => '粤贵铂',
         //    'url' => 'http://www.xftz.cn/info/ygbo_js.php?callback=jQuery183017865482741409067_1472906610734&_=1472906610857',
         //    'typeprefix' => ''
         // ],
-        // 'usd' => [
-        //     'name' => '美元指数',
-        //     'url' => 'http://www.xftz.cn/info/myzs_js.php?callback=jQuery1830024947216159511676_1472909362613&_=1472909362796',
-        //     'typeprefix' => ''
-        // ],
+         'usd' => [
+             'name' => '美元指数',
+             'url' => 'http://www.xftz.cn/info/myzs_js.php?callback=jQuery1830024947216159511676_1472909362613&_=1472909362796',
+             'typeprefix' => ''
+         ],
     ];
     // 间隔时间(s) => 参数名称
     public $typeList = [

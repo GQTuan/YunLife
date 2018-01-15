@@ -37,8 +37,9 @@ class InitController extends \common\components\ConsoleController
     {
         $path = System::isWindowsOs() ? '' : './';
         while (true) {
+            echo exec($path . 'yii init/gather');
             echo exec($path . 'yii init/gather2');
-            echo exec($path . 'yii init/gather4');
+            //echo exec($path . 'yii init/gather4');
             sleep(1);
         }
     }
